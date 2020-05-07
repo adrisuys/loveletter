@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.HomeActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/layout_bg">
+
+    <LinearLayout
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/border_rect">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="current game"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:fontFamily="@font/avengeance"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#F200FF"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:gravity="center">
+
+            <TextView
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="player"
+                android:textColor="#FFF"
+                android:fontFamily="@font/avengeance"
+                android:textAlignment="center"
+                android:textSize="25dp"/>
+
+            <ImageView
+                android:id="@+id/player_game_one"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/affection_token_greyed"/>
+
+            <ImageView
+                android:id="@+id/player_game_two"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/affection_token_greyed"/>
+
+            <ImageView
+                android:id="@+id/player_game_three"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/affection_token_greyed"/>
+
+            <ImageView
+                android:id="@+id/player_game_four"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/affection_token_greyed"/>
+
+            <ImageView
+                android:id="@+id/player_game_five"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/affection_token_greyed"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#F200FF"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:gravity="center">
+
+            <TextView
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="ai"
+                android:textColor="#FFF"
+                android:fontFamily="@font/avengeance"
+                android:textAlignment="center"
+                android:textSize="25dp"/>
+
+            <ImageView
+                android:id="@+id/ai_game_one"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:src="@drawable/affection_token_greyed"
+                android:adjustViewBounds="true"/>
+
+            <ImageView
+                android:id="@+id/ai_game_two"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:src="@drawable/affection_token_greyed"
+                android:adjustViewBounds="true"/>
+
+            <ImageView
+                android:id="@+id/ai_game_three"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:src="@drawable/affection_token_greyed"
+                android:adjustViewBounds="true"/>
+
+            <ImageView
+                android:id="@+id/ai_game_four"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:src="@drawable/affection_token_greyed"
+                android:adjustViewBounds="true"/>
+
+            <ImageView
+                android:id="@+id/ai_game_five"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/affection_token_greyed"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="continue"
+        android:id="@+id/continue_game_btn"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        android:fontFamily="@font/avengeance"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_marginBottom="100dp"
+        android:onClick="continueGame"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="new game"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        android:fontFamily="@font/avengeance"
+        style="?android:attr/borderlessButtonStyle"
+        android:onClick="newGame"/>
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:background="@drawable/border_rect">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="stats"
+            android:textColor="#FFF"
+            android:textAlignment="center"
+            android:fontFamily="@font/avengeance"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="10"
+            android:layout_marginLeft="100dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:text="played : "
+                android:textColor="#FFF"
+                android:fontFamily="@font/avengeance"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/stats_played"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:textColor="#FFF"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:fontFamily="@font/avengeance"
+                android:textSize="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="10"
+            android:layout_marginLeft="100dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:text="won : "
+                android:textColor="#FFF"
+                android:fontFamily="@font/avengeance"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/stats_won"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFF"
+                android:fontFamily="@font/avengeance"
+                android:textSize="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="10"
+            android:layout_marginLeft="100dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:text="ratio : "
+                android:textColor="#FFF"
+                android:fontFamily="@font/avengeance"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/stats_ratio"
+                android:layout_width="0dp"
+                android:textColor="#FFF"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:fontFamily="@font/avengeance"
+                android:textSize="20dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>-->
+
+</LinearLayout>

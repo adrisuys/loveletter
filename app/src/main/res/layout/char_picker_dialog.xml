@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="13"
+    android:background="@drawable/layout_bg">
+
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="#fff"
+        android:text="hawkeye: pick a target"
+        android:fontFamily="@font/avengeance"
+        android:textSize="30dp"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <ImageView
+            android:tag="2"
+            android:layout_marginRight="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:onClick="pickVictim"
+            android:src="@drawable/dr_strange"/>
+
+        <ImageView
+            android:tag="3"
+            android:layout_marginRight="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:onClick="pickVictim"
+            android:src="@drawable/hulk"/>
+
+        <ImageView
+            android:tag="4"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:onClick="pickVictim"
+            android:src="@drawable/nick_fury"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <ImageView
+            android:tag="5"
+            android:layout_marginRight="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:onClick="pickVictim"
+            android:src="@drawable/black_widow"/>
+
+        <ImageView
+            android:tag="6"
+            android:layout_marginRight="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:onClick="pickVictim"
+            android:adjustViewBounds="true"
+            android:src="@drawable/thor"/>
+
+        <ImageView
+            android:tag="7"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:onClick="pickVictim"
+            android:adjustViewBounds="true"
+            android:src="@drawable/iron_man"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:weightSum="12"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"/>
+
+        <ImageView
+            android:tag="8"
+            android:layout_marginRight="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:onClick="pickVictim"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/captain_america"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"/>
+
+    </LinearLayout>
+
+</LinearLayout>
