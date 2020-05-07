@@ -1,6 +1,5 @@
-package be.adrisuys.myapplication.models;
+package be.adrisuys.loveletter.models;
 
-import android.content.Context;
 import android.os.Handler;
 
 import java.io.Serializable;
@@ -8,8 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import be.adrisuys.myapplication.R;
-import be.adrisuys.myapplication.presenter.Presenter;
+import be.adrisuys.loveletter.presenter.Presenter;
 
 public class Game implements Serializable {
 

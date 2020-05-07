@@ -1,4 +1,4 @@
-package be.adrisuys.myapplication.view;
+package be.adrisuys.loveletter.view;
 
 public interface ViewInterface {
     void onDisplayMessage(String msg);

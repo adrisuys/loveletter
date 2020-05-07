@@ -1,9 +1,9 @@
-package be.adrisuys.myapplication.presenter;
+package be.adrisuys.loveletter.presenter;
 
 import java.util.List;
 
-import be.adrisuys.myapplication.models.Game;
-import be.adrisuys.myapplication.view.ViewInterface;
+import be.adrisuys.loveletter.models.Game;
+import be.adrisuys.loveletter.view.ViewInterface;
 
 public class Presenter {
 

@@ -1,4 +1,4 @@
-package be.adrisuys.myapplication.view;
+package be.adrisuys.loveletter.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -19,9 +19,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import be.adrisuys.myapplication.presenter.Presenter;
-import be.adrisuys.myapplication.R;
-import be.adrisuys.myapplication.models.Game;
+import be.adrisuys.loveletter.presenter.Presenter;
+import be.adrisuys.loveletter.R;
+import be.adrisuys.loveletter.models.Game;
 
 public class MainActivity extends AppCompatActivity implements ViewInterface {
 

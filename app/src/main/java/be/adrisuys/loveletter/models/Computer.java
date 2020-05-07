@@ -1,4 +1,4 @@
-package be.adrisuys.myapplication.models;
+package be.adrisuys.loveletter.models;
 
 public class Computer extends Player {
 

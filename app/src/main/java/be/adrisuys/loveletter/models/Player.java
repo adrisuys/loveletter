@@ -1,4 +1,4 @@
-package be.adrisuys.myapplication.models;
+package be.adrisuys.loveletter.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;

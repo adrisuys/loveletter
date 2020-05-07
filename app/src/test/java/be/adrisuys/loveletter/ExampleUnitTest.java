@@ -1,4 +1,4 @@
-package be.adrisuys.myapplication;
+package be.adrisuys.loveletter;
 
 import org.junit.Test;
 

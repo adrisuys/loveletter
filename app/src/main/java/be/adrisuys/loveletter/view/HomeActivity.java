@@ -1,4 +1,4 @@
-package be.adrisuys.myapplication.view;
+package be.adrisuys.loveletter.view;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,9 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
-import be.adrisuys.myapplication.R;
-import be.adrisuys.myapplication.models.Game;
-import be.adrisuys.myapplication.presenter.HomePresenter;
+import be.adrisuys.loveletter.R;
+import be.adrisuys.loveletter.models.Game;
+import be.adrisuys.loveletter.presenter.HomePresenter;
 
 public class HomeActivity extends AppCompatActivity {
 
