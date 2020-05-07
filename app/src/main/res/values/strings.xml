@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Love Letter</string>
+    <string name="computer_seven">The computer plays Iron Man. Nothing happens...</string>
+    <string name="computer_six">The computer plays Thor. The cards have been traded</string>
+    <string name="computer_five">The computer plays Black Widow, you must replace your card</string>
+    <string name="computer_four">The computer plays Nick Fury and is protected</string>
+    <string name="computer_three">The computer plays Hulk but it is a draw</string>
+    <string name="computer_two">The computer plays Dr Strange</string>
+    <string name="computer_one">The computer plays Hawkeye but misses</string>
+    <string name="computer_win">The computer has</string>
+    <string name="player_win">You have</string>
+    <string name="player_seven">Nothing happens...</string>
+    <string name="player_six">The cards have been traded</string>
+    <string name="player_five">Your opponent must discard its card and draw a new one</string>
+    <string name="player_four">You are now protected for a round !</string>
+    <string name="player_three">It is a draw ! Nobody wins.</string>
+    <string name="player_two">Computer\'s card : </string>
+    <string name="player_one">Hawkeye missed its target...</string>
+    <string name="computer_card">The computer plays </string>
+    <string name="player_protected"> but you are protected</string>
+    <string name="computer_protected">The computer is protected...</string>
+    <string name="must_play_seven">You must play Iron Man !</string>
 </resources>

@@ -1,5 +1,6 @@
 package be.adrisuys.myapplication.models;
 
+import android.content.Context;
 import android.os.Handler;
 
 import java.io.Serializable;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import be.adrisuys.myapplication.R;
 import be.adrisuys.myapplication.presenter.Presenter;
 
 public class Game implements Serializable {
@@ -89,7 +91,7 @@ public class Game implements Serializable {
     public void pickVictim(int value) {
         boolean isGuessValid = computer.hasCard(value);
         if (isGuessValid){
-            playerWins();
+            playerWins("You guessed right !");
         } else {
             presenter.onDisplayMessage("Hawkeye missed its target...");
             setComputersTurn();
@@ -101,7 +103,7 @@ public class Game implements Serializable {
     }
 
     public void reinitialize() {
-        cards = new ArrayList<>();
+        cards.clear();
         populateDeck();
         player.getCards().clear();
         computer.getCards().clear();
@@ -192,9 +194,9 @@ public class Game implements Serializable {
         Card computerCard = computer.getCard();
         Card playerCard = player.getCard();
         if (playerCard.getValue() > computerCard.getValue()){
-            playerWins();
+            playerWins(playerCard.getName() + " beats " + computerCard.getName() + " !");
         } else if (playerCard.getValue() < computerCard.getValue()){
-            computerWins();
+            computerWins(playerCard.getName() + " is beaten by " + computerCard.getName() + " !");
         } else {
             player.discardAndDraw(drawFromDeck());
             computer.discardAndDraw(drawFromDeck());
@@ -212,7 +214,7 @@ public class Game implements Serializable {
     private void handleActionFive() {
         presenter.onDisplayMessage("Your opponent must discard its card and draw a new one");
         if (computer.getCard().getValue() == 8){
-            playerWins();
+            playerWins("The component had to discard Captain America !");
         } else {
             computer.discardAndDraw(drawFromDeck());
             setComputersTurn();
@@ -233,7 +235,7 @@ public class Game implements Serializable {
     }
 
     private void handleActionEight() {
-        computerWins();
+        computerWins("You discarded Captain America !");
     }
 
     private void populateDeck() {
@@ -264,23 +266,23 @@ public class Game implements Serializable {
         return c;
     }
 
-    private void playerWins(){
+    private void playerWins(String explanation){
         player.winRound();
         computer.loseRound();
         if (player.hasWinMatch()){
-            presenter.onDisplayWinnerMatch("You have");
+            presenter.onDisplayWinnerMatch("You have", explanation);
         } else {
-            presenter.onDisplayWinnerRound("You have");
+            presenter.onDisplayWinnerRound("You have", explanation);
         }
     }
 
-    private void computerWins(){
+    private void computerWins(String explanation){
         computer.winRound();
         player.loseRound();
         if (player.hasWinMatch()){
-            presenter.onDisplayWinnerMatch("The computer has");
+            presenter.onDisplayWinnerMatch("The computer has", explanation);
         } else {
-            presenter.onDisplayWinnerRound("The computer has");
+            presenter.onDisplayWinnerRound("The computer has", explanation);
         }
     }
 
@@ -302,9 +304,9 @@ public class Game implements Serializable {
             Card computerCard = computer.getCard();
             Card playerCard = player.getCard();
             if (playerCard.getValue() > computerCard.getValue()){
-                playerWins();
+                playerWins(playerCard.getName() + " beats " + computerCard.getName() + " !");
             } else if (playerCard.getValue() < computerCard.getValue()){
-                computerWins();
+                computerWins(playerCard.getName() + " is beaten by " + computerCard.getName() + " !");
             } else {
                 tieGame();
             }
@@ -341,7 +343,7 @@ public class Game implements Serializable {
         int value = memory == null ? (int)(Math.random() * ((8 - 2) + 1)) + 2 : memory.getValue();
         boolean isGuessValid = player.hasCard(value);
         if (isGuessValid){
-            computerWins();
+            computerWins("The computer guessed right.");
         } else {
             if (memory != null){
                 memoryTime = -1;
@@ -363,9 +365,9 @@ public class Game implements Serializable {
         Card computerCard = computer.getCard();
         Card playerCard = player.getCard();
         if (playerCard.getValue() > computerCard.getValue()){
-            playerWins();
+            playerWins(playerCard.getName() + " beats " + computerCard.getName() + " !");
         } else if (playerCard.getValue() < computerCard.getValue()){
-            computerWins();
+            computerWins(playerCard.getName() + " is beaten by " + computerCard.getName() + " !");
         } else {
             player.discardAndDraw(drawFromDeck());
             computer.discardAndDraw(drawFromDeck());
@@ -383,7 +385,7 @@ public class Game implements Serializable {
     private void handleActionComputerFive() {
         presenter.onComputerDisplayMessage("The computer plays Black Widow, you must replace your card");
         if (player.getCard().getValue() == 8){
-            computerWins();
+            computerWins("You had to discard Captain America !");
         } else {
             player.discardAndDraw(drawFromDeck());
             setState(GameState.PLAYER);
@@ -404,6 +406,6 @@ public class Game implements Serializable {
     }
 
     private void handleActionComputerEight() {
-        playerWins();
+        playerWins("The computer discarded Captain America !");
     }
 }

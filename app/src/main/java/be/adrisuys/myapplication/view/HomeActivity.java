@@ -1,18 +1,15 @@
 package be.adrisuys.myapplication.view;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.google.gson.Gson;
 
@@ -28,8 +25,11 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView[] playerResults;
     private ImageView[] computerResults;
     private TextView continueGameBtn;
+    private TextView statsGames, statsWins, statsRatio;
     private boolean clickable;
     private HomePresenter presenter;
+    private int playedCount;
+    private int wonCount;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,6 +70,9 @@ public class HomeActivity extends AppCompatActivity {
         ImageView computerResultFive = findViewById(R.id.ai_game_five);
         computerResults = new ImageView[]{computerResultOne, computerResultTwo, computerResultThree, computerResultFour, computerResultFive};
         continueGameBtn = findViewById(R.id.continue_game_btn);
+        statsGames = findViewById(R.id.stats_played);
+        statsWins = findViewById(R.id.stats_won);
+        statsRatio = findViewById(R.id.stats_ratio);
     }
 
     private void retrieveGame(){
@@ -81,6 +84,7 @@ public class HomeActivity extends AppCompatActivity {
             displayScores();
             clickable = true;
         }
+        retrieveStatsFromSharedPref();
     }
 
     private void retrieveGameFromSharedPref(){
@@ -98,6 +102,7 @@ public class HomeActivity extends AppCompatActivity {
                 continueGameBtn.setTextColor(Color.TRANSPARENT);
             }
         }
+        retrieveStatsFromSharedPref();
     }
 
     private void displayScores() {
@@ -110,5 +115,24 @@ public class HomeActivity extends AppCompatActivity {
                 playerResults[i].setImageResource(R.drawable.affection_token);
             }
         }
+    }
+
+    private void retrieveStatsFromSharedPref(){
+        playedCount = sp.getInt("nbGames", 0);
+        wonCount = sp.getInt("nbWins", 0);
+        displayStats(String.valueOf(playedCount), String.valueOf(wonCount));
+    }
+
+    private void displayStats(String nbGames, String nbWins){
+        String ratio;
+        if (!nbGames.equals("0")){
+            double r = Double.parseDouble(nbWins) / Double.parseDouble(nbGames);
+            ratio = String.format("%.2f", r);
+        } else {
+            ratio = "0.00";
+        }
+        statsGames.setText(nbGames);
+        statsWins.setText(nbWins);
+        statsRatio.setText(ratio);
     }
 }

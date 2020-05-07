@@ -6,7 +6,7 @@
     tools:context=".view.HomeActivity"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/layout_bg">
+    android:background="@drawable/layout_bg_logo">
 
     <LinearLayout
         android:layout_marginTop="150dp"
@@ -30,7 +30,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#F200FF"
+            android:background="#F00"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"/>
 
@@ -102,7 +102,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#F200FF"
+            android:background="#F00"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"/>
 
@@ -195,7 +195,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:onClick="newGame"/>
 
-    <!--<LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -295,6 +295,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>-->
+    </LinearLayout>
 
 </LinearLayout>

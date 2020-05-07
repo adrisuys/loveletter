@@ -7,9 +7,9 @@ public interface ViewInterface {
 
     void displayChoiceWindow();
 
-    void onDisplayWinnerRound(String name);
+    void onDisplayWinnerRound(String name, String explanation);
 
-    void onDisplayWinnerMatch(String name);
+    void onDisplayWinnerMatch(String name, String explanation);
 
     void onDisplayPlayerCards();
 

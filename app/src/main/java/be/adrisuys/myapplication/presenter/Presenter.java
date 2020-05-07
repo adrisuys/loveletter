@@ -44,12 +44,12 @@ public class Presenter {
         game.pickVictim(value);
     }
 
-    public void onDisplayWinnerRound(String name) {
-        view.onDisplayWinnerRound(name);
+    public void onDisplayWinnerRound(String name, String explanation) {
+        view.onDisplayWinnerRound(name, explanation);
     }
 
-    public void onDisplayWinnerMatch(String name) {
-        view.onDisplayWinnerMatch(name);
+    public void onDisplayWinnerMatch(String name, String explanation) {
+        view.onDisplayWinnerMatch(name, explanation);
     }
 
     public void onDisplayPlayerCards() {

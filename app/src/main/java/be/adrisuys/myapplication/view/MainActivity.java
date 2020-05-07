@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
     private TextView computerMove;
     private LinearLayout animationLayout;
     private Dialog dialogPicker;
+
     private SharedPreferences sp;
     private SharedPreferences.Editor spEditor;
     private Gson gson;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
         spEditor = sp.edit();
         game = (Game)getIntent().getSerializableExtra("game");
         presenter = new Presenter(this, game);
+        game.reinitialize();
         setUpLayout();
         displayPlayerCards();
     }
@@ -108,14 +110,14 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
     }
 
     @Override
-    public void onDisplayWinnerRound(String name) {
-        backUp(false);
+    public void onDisplayWinnerRound(String name, String explanation) {
+        backUp(false, !name.contains("computer"));
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.dialog_custom_win);
         TextView tv = dialog.findViewById(R.id.text_message);
         TextView yesBtn = dialog.findViewById(R.id.btn_yes);
         TextView noBtn = dialog.findViewById(R.id.btn_no);
-        tv.setText(name + " won ! do you want to continue ?");
+        tv.setText(explanation.toLowerCase() + " " + name.toLowerCase() + " won ! do you want to continue ?");
         yesBtn.setText("yes");
         noBtn.setText("no");
         yesBtn.setOnClickListener(new View.OnClickListener() {
@@ -140,14 +142,14 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
     }
 
     @Override
-    public void onDisplayWinnerMatch(String name) {
-        backUp(true);
+    public void onDisplayWinnerMatch(String name, String explanation) {
+        backUp(true, !name.contains("computer"));
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.dialog_custom_win);
         TextView tv = dialog.findViewById(R.id.text_message);
         TextView yesBtn = dialog.findViewById(R.id.btn_yes);
         TextView noBtn = dialog.findViewById(R.id.btn_no);
-        tv.setText(name + " won the whole serie");
+        tv.setText(explanation.toLowerCase() + " " + name.toLowerCase() + " won the whole serie");
         yesBtn.setText("ok");
         noBtn.setText("");
         yesBtn.setOnClickListener(new View.OnClickListener() {
@@ -177,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
 
     @Override
     public void onDisplayWinnerTie() {
-        backUp(false);
+        backUp(false, false);
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.dialog_custom_win);
         TextView tv = dialog.findViewById(R.id.text_message);
@@ -345,9 +347,10 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
         animationLayout.setVisibility(View.INVISIBLE);
     }
 
-    private void backUp(boolean isOver){
+    private void backUp(boolean isOver, boolean hasWon){
         if (isOver){
             spEditor.putString("game", "");
+            saveStats(hasWon);
         } else {
             game.setPresenter(null);
             String json = gson.toJson(game);
@@ -364,5 +367,14 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
             intent.putExtra("game", game);
         }
         startActivity(intent);
+    }
+
+    private void saveStats(boolean hasWon){
+        int games = sp.getInt("nbGames", 0);
+        int wins = sp.getInt("nbWins", 0);
+        spEditor.putInt("nbGames", games + 1);
+        if (hasWon){
+            spEditor.putInt("nbWins", wins + 1);
+        }
     }
 }
