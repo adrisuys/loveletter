@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.height = 900;
         dialog.getWindow().setAttributes(lp);
+        dialog.setCancelable(false);
         dialog.show();
     }
 
@@ -206,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.height = 900;
         dialog.getWindow().setAttributes(lp);
+        dialog.setCancelable(false);
         dialog.show();
     }
 

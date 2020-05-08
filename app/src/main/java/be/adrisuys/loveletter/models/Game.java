@@ -75,7 +75,7 @@ public class Game implements Serializable {
     public void playComputerCard(){
         Card card = computer.discardCard(computerIndex);
         if (card.getValue() == 4){
-            handleActions(card);
+            handleComputerActions(card);
         } else {
             if (player.isProtected()){
                 presenter.onComputerDisplayMessage("The computer plays " + card.getName() + " but you are protected");
